@@ -4,7 +4,7 @@ import styles from "./Navbar.module.scss";
 import classNames from "classnames/bind";
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
-
+import shopee from "../../img/shopee.svg";
 const cx = classNames.bind(styles);
 
 function Navbar() {
@@ -14,8 +14,10 @@ function Navbar() {
   return (
     <div className={cx("navbar")}>
       <ul>
-        <li className={cx("title")}>Bankist</li>
-
+        <li className={cx("title")}>
+          <img src={shopee} alt="shopee" />
+          <p>Shopee Paid</p>
+        </li>
         {!user && (
           <>
             <li>

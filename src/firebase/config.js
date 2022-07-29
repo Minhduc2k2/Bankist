@@ -16,4 +16,8 @@ firebase.initializeApp(firebaseConfig);
 //TODO: Initialize Services
 const projectFireStore = firebase.firestore();
 const projectAuth = firebase.auth();
-export { projectFireStore, projectAuth };
+
+//TODO: Create Timestamp (Tạo mốc thời gian)
+const timestamp = firebase.firestore.Timestamp;
+
+export { projectFireStore, projectAuth, timestamp };
