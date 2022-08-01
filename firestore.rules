@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /transactions/{document=**} {
+      // allow read, write: if
+      //     request.time < timestamp.date(2022, 8, 27);
+
+      //? allow read, write
+      //! bằng
+      //? allow read,create,delete,update
+      //TODO: Chỉ cho phép tạo khi đã login
+      allow create: if request.auth != null;
+      //TODO: Chỉ cho phép đọc và xoá khi uid của user đăng nhập bằng uid user trong firebase <=> User chỉ được đọc và xoá data của chính user đó
+      allow read, delete: if request.auth.uid == resource.data.uid;
+    }
+  }
+}

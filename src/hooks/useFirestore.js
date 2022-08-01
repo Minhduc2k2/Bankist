@@ -37,7 +37,7 @@ const firestoreReducer = (state, action) => {
       return state;
   }
 };
-function useFirebase(collection) {
+function useFirestore(collection) {
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
   const [isCancelled, setIsCancelled] = useState(false);
 
@@ -86,4 +86,4 @@ function useFirebase(collection) {
   return { response, addDocument, deleteDocument };
 }
 
-export { useFirebase };
+export { useFirestore };

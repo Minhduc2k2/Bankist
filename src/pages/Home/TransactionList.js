@@ -1,10 +1,10 @@
 import classNames from "classnames/bind";
-import { useFirebase } from "../../hooks/useFirebase";
+import { useFirestore } from "../../hooks/useFirestore";
 import styles from "./Home.module.scss";
 const cx = classNames.bind(styles);
 
 function TransactionList({ transactions }) {
-  const { deleteDocument } = useFirebase("transactions");
+  const { deleteDocument } = useFirestore("transactions");
   const total = transactions.reduce((accumulate, currentvalue) => {
     return accumulate + Number(currentvalue.amount);
   }, 0);

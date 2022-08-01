@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { useFirebase } from "../../hooks/useFirebase";
+import { useFirestore } from "../../hooks/useFirestore";
 function TransactionForm({ uid }) {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
-  const { response, addDocument } = useFirebase("transactions");
+  const { response, addDocument } = useFirestore("transactions");
 
   const handleSubmit = (e) => {
     e.preventDefault();

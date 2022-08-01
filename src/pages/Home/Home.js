@@ -14,7 +14,16 @@ function Home() {
     ["uid", "==", user.uid],
     ["createAt", "desc"]
   );
-
+  //! Before Config firestore.rules -> This will get all transactions of all user
+  // const { document, error } = useCollection("transactions", null, [
+  //   "createAt",
+  //   "desc",
+  // ]);
+  //! After Config firestore.rules -> This will not allow to do it
+  // const { document, error } = useCollection("transactions", null, [
+  //   "createAt",
+  //   "desc",
+  // ]);
   return (
     <div className={cx("container")}>
       <div className={cx("content")}>

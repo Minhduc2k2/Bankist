@@ -35,7 +35,7 @@ function useCollection(collection, _query, _orderBy) {
       },
       (error) => {
         console.log(error.message);
-        setError(error);
+        setError(error.message);
       }
     );
     return () => unsub();
